@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Mail, Phone, Linkedin, MapPin, ArrowUpRight } from "lucide-react";
+import { Mail, Linkedin, MapPin, ArrowUpRight, Instagram } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const contactInfo = [
@@ -14,10 +14,10 @@ const contactInfo = [
         href: "mailto:sriram132607@gmail.com",
     },
     {
-        icon: <Phone className="w-5 h-5 text-secondary-emerald" />,
-        label: "Phone",
-        value: "+91 9677204948",
-        href: "tel:+919677204948",
+        icon: <Instagram className="w-5 h-5 text-pink-500" />,
+        label: "Instagram",
+        value: "@srxrxm",
+        href: "https://www.instagram.com/srxrxm?igsh=NWc4YmRneGVocjZh",
     },
     {
         icon: <Linkedin className="w-5 h-5 text-accent-blue" />,
@@ -76,13 +76,13 @@ export default function Contact() {
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div>
-                        <h2 className="text-4xl md:text-6xl font-bold mb-8">
+                        <h2 className="text-4xl md:text-6xl font-bold mb-8 font-heading">
                             Let&apos;s build the <br />
-                            <span className="text-primary-cyan">next strategy</span> together.
+                            <span className="text-secondary-purple">next strategy</span> together.
                         </h2>
-                        <p className="text-slate-400 text-lg mb-12 max-w-lg">
-                            Always open to discussing quant systems, backend architectures,
-                            or new opportunities in the trading ecosystem.
+                        <p className="text-text-body text-lg mb-12 max-w-lg leading-relaxed italic">
+                            &quot;Always open to discussing quant systems, backend architectures,
+                            or new opportunities in the trading ecosystem.&quot;
                         </p>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -91,16 +91,16 @@ export default function Contact() {
                                     key={idx}
                                     href={info.href}
                                     target={info.href.startsWith("http") ? "_blank" : "_self"}
-                                    className="flex items-center gap-4 p-4 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-white/10 transition-all group"
+                                    className="flex items-center gap-4 p-4 rounded-2xl glass-card hover:bg-white/[0.04] hover:border-primary-cyan/30 transition-all group"
                                 >
                                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:scale-110 transition-transform">
                                         {info.icon}
                                     </div>
                                     <div>
-                                        <div className="text-[10px] uppercase tracking-wider text-slate-500 font-bold mb-0.5">
+                                        <div className="text-[10px] uppercase tracking-wider text-text-muted font-bold mb-0.5 font-mono">
                                             {info.label}
                                         </div>
-                                        <div className="text-sm font-medium text-slate-200">
+                                        <div className="text-sm font-medium text-text-heading">
                                             {info.value}
                                         </div>
                                     </div>
@@ -113,36 +113,36 @@ export default function Contact() {
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="glass p-8 md:p-12 rounded-[2rem] border-white/10"
+                        className="glass-card p-8 md:p-12 rounded-[2rem] border-border-main"
                     >
                         <form onSubmit={onSubmit} className="space-y-6">
                             <div className="space-y-2">
-                                <label className="text-xs font-bold uppercase tracking-widest text-slate-500 ml-1">Your Name</label>
+                                <label className="text-xs font-bold uppercase tracking-widest text-text-muted ml-1 font-mono">Your Name</label>
                                 <input
                                     type="text"
                                     name="name"
                                     required
-                                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-primary-cyan outline-none transition-colors"
+                                    className="w-full bg-white/5 border border-border-main rounded-xl px-4 py-3 focus:border-primary-cyan outline-none transition-colors text-text-heading"
                                     placeholder="John Doe"
                                 />
                             </div>
                             <div className="space-y-2">
-                                <label className="text-xs font-bold uppercase tracking-widest text-slate-500 ml-1">Work Email</label>
+                                <label className="text-xs font-bold uppercase tracking-widest text-text-muted ml-1 font-mono">Work Email</label>
                                 <input
                                     type="email"
                                     name="email"
                                     required
-                                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-primary-cyan outline-none transition-colors"
+                                    className="w-full bg-white/5 border border-border-main rounded-xl px-4 py-3 focus:border-primary-cyan outline-none transition-colors text-text-heading"
                                     placeholder="john@company.com"
                                 />
                             </div>
                             <div className="space-y-2">
-                                <label className="text-xs font-bold uppercase tracking-widest text-slate-500 ml-1">Message</label>
+                                <label className="text-xs font-bold uppercase tracking-widest text-text-muted ml-1 font-mono">Message</label>
                                 <textarea
                                     name="message"
                                     required
                                     rows={4}
-                                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-primary-cyan outline-none transition-colors resize-none"
+                                    className="w-full bg-white/5 border border-border-main rounded-xl px-4 py-3 focus:border-primary-cyan outline-none transition-colors resize-none text-text-heading"
                                     placeholder="Tell me about your project..."
                                 />
                             </div>
@@ -151,7 +151,7 @@ export default function Contact() {
                                 disabled={status === "sending"}
                                 className={cn(
                                     "w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all group",
-                                    status === "sending" ? "bg-slate-700 cursor-not-allowed" : "bg-primary-cyan text-background-obsidian hover:shadow-[0_0_30px_rgba(0,242,255,0.4)]"
+                                    status === "sending" ? "bg-slate-700 cursor-not-allowed" : "button-space"
                                 )}
                             >
                                 {status === "sending" ? "Sending..." : "Send Message"}
@@ -161,7 +161,7 @@ export default function Contact() {
                             {result && (
                                 <p className={cn(
                                     "text-center text-sm font-medium mt-2",
-                                    status === "success" ? "text-secondary-emerald" : "text-red-400"
+                                    status === "success" ? "text-profit-green" : "text-loss-red"
                                 )}>
                                     {result}
                                 </p>
@@ -170,7 +170,7 @@ export default function Contact() {
                     </motion.div>
                 </div>
 
-                <footer className="mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-sm bg-background-obsidian">
+                <footer className="mt-24 pt-12 border-t border-border-main flex flex-col md:flex-row justify-between items-center gap-6 text-text-muted text-sm relative">
                     <div>© 2026 SRIRAM M. All rights reserved.</div>
                     <div className="flex gap-8">
                         <Link href="#about" className="hover:text-primary-cyan transition-colors">About</Link>
