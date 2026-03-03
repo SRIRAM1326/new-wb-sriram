@@ -3,10 +3,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Building2, Calendar, FileText } from "lucide-react";
+import Image from "next/image";
 
 const experiences = [
     {
         company: "UVFarms",
+        logo: "/uvfarms-logo.png",
         role: "Algorithmic Trading Developer",
         period: "Nov 2023 – Present",
         bullets: [
@@ -21,6 +23,7 @@ const experiences = [
     },
     {
         company: "Domino's",
+        logo: "/dominos-logo.png",
         role: "Business Associate (Internship)",
         period: "Dec 2022 – Feb 2023",
         bullets: [
@@ -30,7 +33,6 @@ const experiences = [
             "Financial Management: Handled cash transactions and tracked expenses with precise order pricing.",
             "Professional Communication: Developed strong communication skills through direct client interactions and polite phone etiquette.",
         ],
-        ppt: "/pptx/Dominos_Internship_Report.pptx"
     },
 ];
 
@@ -61,8 +63,19 @@ export default function Experience() {
                             <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
                                 <div>
                                     <h3 className="text-2xl font-bold text-text-heading font-heading">{exp.role}</h3>
-                                    <div className="flex items-center gap-2 text-primary-cyan mt-1 group cursor-default">
-                                        <Building2 className="w-4 h-4 group-hover:text-secondary-purple transition-colors" />
+                                    <div className="flex items-center gap-3 text-primary-cyan mt-1 group cursor-default">
+                                        {exp.logo ? (
+                                            <div className="w-8 h-8 relative rounded-lg overflow-hidden bg-white/5 p-1 border border-white/10 group-hover:border-primary-cyan/30 transition-colors">
+                                                <Image
+                                                    src={exp.logo}
+                                                    alt={exp.company}
+                                                    fill
+                                                    className="object-contain"
+                                                />
+                                            </div>
+                                        ) : (
+                                            <Building2 className="w-4 h-4 group-hover:text-secondary-purple transition-colors" />
+                                        )}
                                         <span className="font-semibold group-hover:text-text-heading transition-colors">{exp.company}</span>
                                     </div>
                                 </div>

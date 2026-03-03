@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { TrendingUp, Menu, X } from "lucide-react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -36,8 +37,13 @@ export default function Navbar() {
         >
             <div className="max-w-7xl mx-auto flex justify-between items-center">
                 <Link href="/" className="flex items-center gap-2 group">
-                    <div className="w-10 h-10 rounded-lg bg-primary-cyan/10 flex items-center justify-center border border-primary-cyan/20 group-hover:border-primary-cyan/50 transition-colors">
-                        <TrendingUp className="w-6 h-6 text-primary-cyan" />
+                    <div className="w-10 h-10 rounded-lg bg-primary-cyan/5 flex items-center justify-center border border-primary-cyan/10 group-hover:border-primary-cyan/30 transition-all overflow-hidden relative">
+                        <Image
+                            src="/navbar-logo.png"
+                            alt="Logo"
+                            fill
+                            className="object-contain p-0.5 group-hover:scale-110 transition-transform duration-300"
+                        />
                     </div>
                     <span className="text-xl font-bold tracking-tight text-text-heading font-heading group-hover:text-primary-cyan transition-colors">
                         SRIRAM<span className="text-primary-cyan">.</span>M

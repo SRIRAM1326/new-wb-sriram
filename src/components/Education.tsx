@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { GraduationCap, MapPin, Calendar, BookOpen } from "lucide-react";
+import Image from "next/image";
 
 export default function Education() {
     return (
@@ -29,8 +30,16 @@ export default function Education() {
                         <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
                             <div>
                                 <h3 className="text-2xl font-bold text-text-heading font-heading">Bachelor of Commerce (Information Systems Management)</h3>
-                                <div className="flex items-center gap-2 text-primary-cyan mt-1 font-semibold text-lg">
-                                    SRM Institute of Science and Technology
+                                <div className="flex items-center gap-3 text-primary-cyan mt-1 group cursor-default">
+                                    <div className="w-10 h-10 relative rounded-lg overflow-hidden bg-white/5 p-1 border border-white/10 group-hover:border-primary-cyan/30 transition-colors">
+                                        <Image
+                                            src="/srm-logo.png"
+                                            alt="SRM University"
+                                            fill
+                                            className="object-contain"
+                                        />
+                                    </div>
+                                    <span className="font-semibold text-lg hover:text-text-heading transition-colors">SRM Institute of Science and Technology</span>
                                 </div>
                                 <div className="flex items-center gap-4 mt-2 text-text-muted text-sm font-mono">
                                     <div className="flex items-center gap-1.5">

@@ -20,7 +20,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-r from-space-black via-space-black/80 to-transparent -z-10" />
             <div className="absolute inset-0 bg-gradient-to-t from-space-black via-transparent to-transparent -z-10" />
 
-            <div className="max-w-7xl mx-auto w-full flex flex-col items-start text-left">
+            <div className="max-w-7xl mx-auto w-full flex flex-col items-start text-left relative z-10">
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -36,14 +36,23 @@ export default function Hero() {
                     </h1>
 
                     <div className="space-y-6 text-sm md:text-base text-text-body mb-12 leading-relaxed max-w-2xl">
+                        <h2 className="text-2xl md:text-3xl font-bold text-primary-cyan font-heading mt-4">
+                            What I Bring to Your Company
+                        </h2>
                         <p>
-                            I’m an <span className="text-primary-cyan font-semibold">Algorithmic Trading Engineer</span> focused on building high-performance, production-grade systems for real-time financial markets. My work centers on designing scalable data pipelines, automated trading strategies, and full-stack platforms that transform live market data into actionable execution.
+                            I design and engineer production-grade algorithmic trading infrastructure built for performance, precision, and resilience.
                         </p>
                         <p>
-                            I specialize in <span className="text-secondary-purple font-semibold">Python, event-driven architectures, and low-latency systems</span>. I’ve built end-to-end trading infrastructure including WebSocket market feeds, VWAP-based strategy engines, risk management modules, and live monitoring dashboards.
+                            I approach financial markets as a systems engineering challenge — developing modular, multi-threaded architectures that manage real-time data ingestion, strategy evaluation, risk enforcement, and order execution with controlled latency and state integrity.
                         </p>
                         <p>
-                            I enjoy solving complex problems at the intersection of data, speed, and reliability — and turning them into robust, real-world products.
+                            My focus extends beyond signal generation. I build structured, fault-tolerant systems that operate predictably under market stress, broker constraints, and infrastructure volatility.
+                        </p>
+                        <p>
+                            From architecture design to execution lifecycle management and capital protection protocols, I take end-to-end ownership of the trading stack.
+                        </p>
+                        <p className="font-semibold text-primary-cyan">
+                            Reliable. Risk-aware. Engineered for real markets.
                         </p>
                     </div>
 
